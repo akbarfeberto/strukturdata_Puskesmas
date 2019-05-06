@@ -1,0 +1,114 @@
+#include <conio.h>
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+struct data{
+char no[10];
+nama[20];
+alamat[35];
+jkelamin[10];
+};
+data batas[100];
+
+int a,b,c,d;
+
+void inputdata(){ 
+  cout<<"Jumlah Data Yang Akan diinput : ";cin>>b;
+  d=0;
+  for(c=0; c<b; c++){
+  cout<<"Data ke-\t"<<(d+1)<<endl;
+  cout<<"No.Pasien\t : ";cin>>batas[a].no;
+  cout<<"Nama\t\t : ";cin>>batas[a].nama;
+  cout<<"Alamat\t\t : ";cin>>batas[a].alamat;
+  cout<<"Jenis Kelamin\t : ";cin>>batas[a].jkelamin;
+  a++;
+  cout<<endl;
+  }
+  system("cls");
+  }
+
+void lihatdata()
+{int i;
+ cout<<"================================Menampilkan Data===============================";
+ cout<<endl;
+ for(i=0; i<a; i++){
+  cout<<"Data Ke- "<<(i+1)<<endl;
+  cout<<"No Pasien\t : "<<batas[i].no<<endl;
+  cout<<"Nama\t\t : "<<batas[i].nama<<endl;
+  cout<<"Alamat\t\t : "<<batas[i].alamat<<endl;
+  cout<<"Jenis Kelamin\t : "<<batas[i].jkelamin<<endl;
+  cout<<endl;
+  }
+  cout<<"===============================================================================";
+  getch();
+  system("cls");
+  }
+
+void hapusdata(){
+int x,y;
+ cout<<"Hapus data ke- ";cin>>x;
+ y=x-1;
+ a--;
+ for(int i=y; i<a; i++)
+ {batas[i]=batas[i+1];}
+ system("cls");;
+ cout<<"Data ke- "<<x<<" Berhasil Terhapus ";
+ getch();
+ system("cls");
+}
+
+void editdata(){
+int k,l;
+cout<<"Masukan Data yang akan diedit : ";
+cin>>k;
+
+l=k-1;
+cout<<"No\t: ";cin>>batas[l].no;
+cout<<"Nama\t: ";cin>>batas[l].nama;
+cout<<"Alamat\t: ";cin>>batas[l].alamat;
+cout<<"Jenis Kelamin\t: ";cin>>batas[l].jkelamin;
+lihatdata();
+}
+
+int main()
+{     int pilih;
+ char w;
+ awal:
+ cout<<"=============================PROGRAM STRUKTUR DATA============================="<<endl;
+ cout<<"=========================PROGRAM PENDAFTARAN PUSKESMAS========================="<<endl;
+ cout<<"================================ PILIHAN MENU ================================="<<endl;
+ cout<<"\n1. Tambah data";
+ cout<<"\n2. Hapus Data";
+ cout<<"\n3. Lihat Data";
+ cout<<"\n4. Edit Data";
+ cout<<"\n5. Keluar";
+ cout<<"\n\nMasukkan Pilihan : ";
+  cin>>pilih;
+  if(pilih==1)
+   {system("cls");inputdata();goto awal;}
+  if(pilih==2)
+   {system("cls");hapusdata();goto awal;}
+  if(pilih==3)
+   {system("cls");lihatdata();goto awal;}
+  if(pilih==4)
+   {system("cls");editdata();goto awal;}
+  if(pilih==5)
+   {system("cls");
+   cout<<"APAKAH ANDA YAKIN KELUAR DARI PROGRAM??";
+   cout<<"    [Y]            or            [N]   "<<endl;
+   cout<<"                                         ";
+   cin>>w;
+   
+   if(w=='y'||w=='Y'){
+   system("cls");
+    cout<<"******************************* POWEROFF *******************************";
+	}
+   if(w=='n'||w=='N')
+    {system("cls");goto awal;}}
+   else
+   {system("cls");
+   goto awal;
+   }
+}
